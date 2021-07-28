@@ -20,7 +20,7 @@ git clone https://github.com/clebersonp/backend-challenge-itidigital.git
 - Versão docker 20.10.3 ou superior. [Docker installation](https://docs.docker.com/engine/install/).
 - Executar o seguinte comando para o build:
 ```sh
-docker run -it --rm --name challenge-itidigital -v "$(pwd)":/usr/src/challenge -w /usr/src/challenge maven:3.8.1-adoptopenjdk-11 mvn clean install
+docker run -it --user $(id -u):$(id -g) --rm --name challenge-itidigital -v "$(pwd)":/usr/src/challenge -w /usr/src/challenge maven:3.8.1-adoptopenjdk-11 mvn clean install
 ```
 - Executar o seguinte comando para construir a imagem: 
   docker:
