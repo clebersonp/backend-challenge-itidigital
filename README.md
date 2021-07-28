@@ -35,6 +35,7 @@ docker run -p 8080:8080 -e JAVA_OPTS=-Dserver.port=8080 challenge/itidigital
 >
 > Assumindo estar no `diretório raiz do projeto` durante o `build` e `criação de imagem 
 docker`;
+>
 > Assumindo que a porta `8080` seja escolhida para executar a aplicação;
 
 ### Build e execução via maven wrapper e jdk-11
@@ -52,6 +53,7 @@ docker`;
 > **_Notas:_**
 >
 > Assumindo estar no `diretório raiz do projeto` durante o `build` e `execução` da aplicação;
+>
 > Caso a versão defaut do jdk seja inferior a versão 11, deve ser informado o 
 caminho da versão durante o build e execução da aplicação. Ex: `JAVA_HOME=/usr/lib/jvm/jdk-11.0.10/` ./mvnw clean install
 
