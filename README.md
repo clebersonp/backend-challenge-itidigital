@@ -22,8 +22,7 @@ git clone https://github.com/clebersonp/backend-challenge-itidigital.git
 ```sh
 docker run -it --user $(id -u):$(id -g) --rm --name challenge-itidigital -v "$(pwd)":/usr/src/challenge -w /usr/src/challenge maven:3.8.1-adoptopenjdk-11 mvn clean install
 ```
-- Executar o seguinte comando para construir a imagem: 
-  docker:
+- Executar o seguinte comando para construir a imagem docker:
 ```sh
 docker build -t challenge/itidigital .
 ```
