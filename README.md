@@ -10,9 +10,9 @@ challenge-itidigital](https://github.com/itidigital/backend-challenge/blob/maste
 
 ### Clone do projeto
 
-Realizar o clone do projeto a partir do comando:
+Realizar o clone do projeto a partir do comando no diretório de sua escolha:
 ```
-user:~/ git clone blablablabla
+git clone https://github.com/clebersonp/backend-challenge-itidigital.git
 ```
 
 ### Build e execução docker file
@@ -20,37 +20,39 @@ user:~/ git clone blablablabla
 - Versão docker 20.10.3 ou superior. [Docker installation](https://docs.docker.com/engine/install/).
 - Executar o seguinte comando para o build:
 ```sh
-user:~/diretorio-projeto$ docker run -it --rm --name challenge-itidigital -v "$(pwd)":/usr/src/challenge -w /usr/src/challenge maven:3.8.1-adoptopenjdk-11 mvn clean install
+docker run -it --rm --name challenge-itidigital -v "$(pwd)":/usr/src/challenge -w /usr/src/challenge maven:3.8.1-adoptopenjdk-11 mvn clean install
 ```
 - Executar o seguinte comando para construir a imagem: 
   docker:
 ```sh
-user:~/diretorio-projeto$ docker build -t challenge/itidigital .
+docker build -t challenge/itidigital .
 ```
 - Executar a aplicação a partir da imagem criada:
 ```sh
-user:~/diretorio-projeto$ docker run -p 8080:8080 -e JAVA_OPTS=-Dserver.port=8080 challenge/itidigital
+docker run -p 8080:8080 -e JAVA_OPTS=-Dserver.port=8080 challenge/itidigital
 ```
 > **_Notas:_**
-> -Assumindo estar no `diretório raiz do projeto` durante o `build` e `criação de imagem 
+>
+> Assumindo estar no `diretório raiz do projeto` durante o `build` e `criação de imagem 
 docker`;
-> -Assumindo que a porta `8080` seja escolhida para executar a aplicação;
+> Assumindo que a porta `8080` seja escolhida para executar a aplicação;
 
 ### Build e execução via maven wrapper e jdk-11
 - Versão do jdk 11 ou superior. [jdk-11 installation](https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html).
 - Executar o seguinte comando para o build:
 ```sh
-user:~/diretorio-projeto$ ./mvnw clean install
+./mvnw clean install
 ```
 - Executar o seguinte comando para a execução da aplicação 
   a partir da porta desejada. Caso não passe a porta no argumento, por default será 
   executada na porta `8080`:
 ```sh
-user:~/diretorio-projeto$ ./mvnw spring-boot:run -Dspring-boot.run.arguments=--server.port=9090
+./mvnw spring-boot:run -Dspring-boot.run.arguments=--server.port=9090
 ```
 > **_Notas:_**
-> -Assumindo estar no `diretório raiz do projeto` durante o `build` e `execução` da aplicação;
-> -Caso a versão defaut do jdk seja inferior a versão 11, deve ser informado o 
+>
+> Assumindo estar no `diretório raiz do projeto` durante o `build` e `execução` da aplicação;
+> Caso a versão defaut do jdk seja inferior a versão 11, deve ser informado o 
 caminho da versão durante o build e execução da aplicação. Ex: `JAVA_HOME=/usr/lib/jvm/jdk-11.0.10/` ./mvnw clean install
 
 ## Doc API REST
