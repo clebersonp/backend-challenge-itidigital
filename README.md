@@ -84,7 +84,7 @@ sempre o mesmo. Já o método **_POST_** não é considerado um método HTTP _id
 pois remete o conceito de criação de novo recurso no servidor. Então, para cada nova 
 requisição utilizando **_POST_**, em teoria, seria criado um novo recurso.
 
-### Desing Pattern
+### Design Pattern
 
 Embora exista um único endpoint nessa API, o serviço foi desenvolvido pensando 
 na existência de outros tipos de validações, como por exemplo: CPF, CNPJ, número de 
