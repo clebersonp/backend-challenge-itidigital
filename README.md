@@ -89,7 +89,7 @@ requisição utilizando **_POST_**, em teoria, seria criado um novo recurso.
 Embora exista um único endpoint nessa API, o serviço foi desenvolvido pensando 
 na existência de outros tipos de validações, como por exemplo: CPF, CNPJ, número de 
 cartões, etc. Desta maneira, sabendo que pode existir uma família de algoritmos, o serviço foi criado utilizando 
-o _Desing Pattern Strategy_. Onde existe um valor a ser testado/validado e seu algoritmo 
+o _Design Pattern Strategy_. Onde existe um valor a ser testado/validado e seu algoritmo 
 correspondente para realizar a validação. 
 
 
